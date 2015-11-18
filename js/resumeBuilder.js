@@ -1,9 +1,3 @@
-// Replace a placeholder value in an html string and then adds it to DOM
-function replace(placeholder, value, dom_name, html_string) {
-    var final_value = html_string.replace(placeholder, value);
-    $(dom_name).append(final_value);
-}
-
 /*
  * Seperating DOM into its DIVs for javascript manipulation.
  */
@@ -22,7 +16,7 @@ var Bio = function() {
         "github": "https://github.com/WizKIDz",
         "blog": "http://wizkidz.github.io",
         "location": "Wichita, KS"
-    };
+    }
     this.skills = ["iOS App Development", "Web Applications", "Python", "Objectiv-C", "C++/C", "Making things work when they dont :)"];
 
     this.list_items = [HTMLcontactGeneric, HTMLtwitter, HTMLgithub, HTMLblog, HTMLlocation];
@@ -43,7 +37,7 @@ var Bio = function() {
             $('#topContacts').append(final_value);
             $('#footerContacts').append(final_value);
             i++;
-        };
+        }
         // Add Profile Picture
         var pic_value = HTMLbioPic.replace(placeholder, this.picture);
         $('#header').append(pic_value);
@@ -56,7 +50,7 @@ var Bio = function() {
         for (var i = 0; i < this.skills.length; i++) {
             var skill_value = HTMLskills.replace(placeholder, this.skills[i]);
             $('#skills').append(skill_value);
-        };
+        }
     }
 };
 
@@ -74,7 +68,7 @@ var Work = function() {
         "location": "Wichita, KS",
         "dates": "January 2013 - January 2014",
         "description": "Using ABB robots to do usefull manuafaturing applications"
-    }];
+    }]
     this.display = function() {
         // Work Title
         for (var i = 0; i < this.jobs.length; i++) {
@@ -97,7 +91,7 @@ var Work = function() {
             // Body of job
             var description_html = HTMLworkDescription.replace(placeholder, job.description);
             $(dom).append(description_html);
-        };
+        }
     }
 };
 
@@ -108,7 +102,7 @@ var Projects = function() {
         "dates": "October 2015",
         "description": "Startup HQ is a place where ideas, resources, and people coalesce; where entrepreneurship meets community. Our mission is to provide startups, groups, and interested individuals with the tools they need to find and market services, skills, and people. At Startup HQ the resources and individuals needed to form a business also forms a community. A marketplace of entrepreneurship and innovation connected through a new era of collaboration.",
         "images": ["images/startuphq/startuphq.png", "images/startuphq/startuphq1.png"]
-    }];
+    }]
     this.display = function() {
         for (var i = 0; i < this.projects.length; i++) {
             // project Object
@@ -128,8 +122,8 @@ var Projects = function() {
             for (var i = 0; i < project.images.length; i++) {
                 var image = HTMLprojectImage.replace(placeholder, project.images[i]);
                 $(dom).append(image);
-            };
-        };
+            }
+        }
     }
 };
 
@@ -143,13 +137,13 @@ var Education = function() {
         "majors": ["Computer Science"],
         "dates": "2017",
         "url": "www.wichita.edu"
-    }];
+    }]
     this.online = [{
         "title": "Frontend Nano Degree",
         "school": "Udacity",
         "date": "2016",
         "url": "udacity.com"
-    }];
+    }]
     this.display = function() {
         // Schools Classes
         for (var i = 0; i < this.schools.length; i++) {
@@ -169,7 +163,7 @@ var Education = function() {
             for (var i = 0; i < school.majors.length; i++) {
                 var major = HTMLschoolMajor.replace(placeholder, school.majors[i]);
                 $(dom).append(major);
-            };
+            }
             // Online Classes
             $('#education').append(HTMLonlineClasses);
             for (var i = 0; i < this.online.length; i++) {
@@ -187,11 +181,10 @@ var Education = function() {
                 var url_html = HTMLonlineURL.replace(placeholder, online.url);
                 $(dom).append(url_html);
                 // Body of oniline
-            };
+            }
         }
-
     }
-}
+};
 
 
 /*
